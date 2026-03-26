@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIPHER MASTER - Hacker Challenge</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- MATRIX BACKGROUND -->
+    <div class="matrix-bg">
+        <img src="Background.gif" alt="Matrix Background" class="matrix-gif">
+    </div>
+
+    <!-- LOADING SCREEN -->
+    <div id="loadingScreen" class="loading-screen active">
+        <div class="loading-container">
+            <img src="Crypto Analyser VR1.gif" alt="CRYPTO ANALYZER VR1.0" class="loading-image">
+            <div class="loading-bar-wrapper">
+                <div class="loading-bar">
+                    <div class="loading-bar-fill"></div>
+                </div>
+                <p class="loading-text">INITIALIZING SYSTEM...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN PAGE -->
+    <div id="mainPage" class="page active">
+        <div class="container">
+            <!-- HEADER -->
+            <header class="header">
+                <h1><i class="fas fa-lock"></i> CIPHER MASTER</h1>
+                <p class="subtitle">Decrypt The Codes - Master The Ciphers</p>
+                <div class="system-status">
+                    <div class="status-box">
+                        <span class="status-label">SCORE:</span>
+                        <span id="mainScore" class="status-value">0</span>
+                    </div>
+                    <div class="status-box">
+                        <span class="status-label">COMPLETED:</span>
+                        <span id="mainCompleted" class="status-value">0/10</span>
+                    </div>
+                    <div class="status-box">
+                        <span class="status-label">LEVEL:</span>
+                        <span id="mainLevel" class="status-value">NOVICE</span>
+                    </div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div id="progressFill" class="progress-fill"></div>
+                    </div>
+                    <p id="completionPercent" class="completion-text">0% COMPLETE</p>
+                </div>
+            </header>
+
+            <!-- CHALLENGES GRID -->
+            <div class="challenges-grid">
+                <!-- Challenge 1: Base64 -->
+                <div class="challenge-card unlocked" onclick="startChallengeIfUnlocked(0)">
+                    <div class="challenge-header">
+                        <h3>Challenge 1</h3>
+                        <span class="challenge-type">BASE64</span>
+                    </div>
+                    <p class="challenge-description">Decode a Base64 encrypted message</p>
+                    <div id="status0" class="challenge-status unlocked">
+                        <i class="fas fa-play"></i> PLAY
+                    </div>
+                </div>
+
+                <!-- Challenge 2: Caesar Shift 3 -->
+                <div class="challenge-card locked" onclick="startChallengeIfUnlocked(1)">
+                    <div class="challenge-header">
+                        <h3>Challenge 2</h3>
+                        <span class="challenge-type">CAESAR</span>
+                    </div>
+                    <p class="challenge-description">Shift cipher with key 3</p>
+                    <div id="status1" class="challenge-status locked">
+                        <i class="fas fa-lock"></i> LOCKED
+                    </div>
+                </div>
+
+                <!-- Challenge 3: Caesar Shift 5 -->
+                <div class="challenge-card locked" onclick="startChallengeIfUnlocked(2)">
+                    <div class="challenge-header">
+                        <h3>Challenge 3</h3>
+                        <span class="challenge-type">CAESAR</span>
+                    </div>
+                    <p class="challenge-description">Shift cipher with key 5</p>
+                    <div id="status2" class="challenge-status locked">
+                        <i class="fas fa-lock"></i> LOCKED
+                    </div>
+                </div>
+
+                <!-- Challenge 4: Substitution (Atbash) -->
+                <div class="challenge-card locked" onclick="startChallengeIfUnlocked(3)">
+                    <div class="challenge-header">
+                        <h3>Challenge 4</h3>
+                        <span class="challenge-type">SUBSTITUTION</span>
+                    </div>
+                    <p class="challenge-description">Reverse alphabet cipher</p>
+                    <div id="status3" class="challenge-status locked">
+                        <i class="fas fa-lock"></i> LOCKED
+                    </div>
+                </div>
+
+                <!-- Challenge 5: Vigenère Easy -->
+                <div class="challenge-card locked" onclick="startChallengeIfUnlocked(4)">
+                    <div class="challenge-header">
+                        <h3>Challenge 5</h3>
+                        <span class="challenge-type">VIGENÈRE</span>
+                    </div>
+                    <p class="challenge-description">Keyword-based cipher</p>
+                    <div id="status4" class="challenge-status locked">
+                        <i class="fas fa-lock"></i> LOCKED
+                    </div>
+                </div>
+
+                <!-- Challenge 6: Base64 Advanced -->
+                <div class="challenge-card locked" onclick="startChallengeIfUnlocked(5)">
+                    <div class="challenge-header">
+                        <h3>Challenge 6</h3>
+                        <span class="challenge-type">BASE64</span>
+                    </div>
+                    <p class="challenge-description">Advanced Base64 encoding</p>
+                    <div id="status5" class="challenge-status locked">
+                        <i class="fas fa-lock"></i> LOCKED
+                    </div>
+                </div>
+
+                <!-- Challenge 7: Caesar Unknown Shift -->
+                <div class="challenge-card locked" onclick="startChallengeIfUnlocked(6)">
+                    <div class="challenge-header">
+                        <h3>Challenge 7</h3>
+                        <span class="challenge-type">CAESAR</span>
+                    </div>
+                    <p class="challenge-description">Identify the shift value</p>
+                    <div id="status6" class="challenge-status locked">
+                        <i class="fas fa-lock"></i> LOCKED
+                    </div>
+                </div>
+
+                <!-- Challenge 8: Vigenère Medium -->
+                <div class="challenge-card locked" onclick="startChallengeIfUnlocked(7)">
+                    <div class="challenge-header">
+                        <h3>Challenge 8</h3>
+                        <span class="challenge-type">VIGENÈRE</span>
+                    </div>
+                    <p class="challenge-description">Medium difficulty cipher</p>
+                    <div id="status7" class="challenge-status locked">
+                        <i class="fas fa-lock"></i> LOCKED
+                    </div>
+                </div>
+
+                <!-- Challenge 9: Substitution Hard -->
+                <div class="challenge-card locked" onclick="startChallengeIfUnlocked(8)">
+                    <div class="challenge-header">
+                        <h3>Challenge 9</h3>
+                        <span class="challenge-type">SUBSTITUTION</span>
+                    </div>
+                    <p class="challenge-description">Complex substitution cipher</p>
+                    <div id="status8" class="challenge-status locked">
+                        <i class="fas fa-lock"></i> LOCKED
+                    </div>
+                </div>
+
+                <!-- Challenge 10: Master Challenge -->
+                <div class="challenge-card locked" onclick="startChallengeIfUnlocked(9)">
+                    <div class="challenge-header">
+                        <h3>Challenge 10</h3>
+                        <span class="challenge-type">MASTER</span>
+                    </div>
+                    <p class="challenge-description">Ultimate cryptography test</p>
+                    <div id="status9" class="challenge-status locked">
+                        <i class="fas fa-lock"></i> LOCKED
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CHALLENGE PAGE -->
+    <div id="challengePage" class="page">
+        <div class="container challenge-container">
+            <button class="btn-back" onclick="returnToMain()">
+                <i class="fas fa-arrow-left"></i> BACK
+            </button>
+
+            <div class="challenge-content">
+                <header class="challenge-header-section">
+                    <h2 id="challengeTitle">Challenge Title</h2>
+                    <p id="challengeDescription">Challenge description goes here</p>
+                </header>
+
+                <div class="challenge-display">
+                    <div class="encrypted-section">
+                        <label>ENCRYPTED MESSAGE:</label>
+                        <div id="encryptedMessage" class="encrypted-text">ENCRYPTED_TEXT</div>
+                    </div>
+
+                    <div class="hint-section">
+                        <button id="hintBtn" class="btn-hint" onclick="showHint()">
+                            <i class="fas fa-lightbulb"></i> SHOW HINT
+                        </button>
+                        <p id="hintText" class="hint-text" style="display:none;"></p>
+                    </div>
+
+                    <div class="answer-section">
+                        <label>YOUR ANSWER:</label>
+                        <input 
+                            type="text" 
+                            id="answerInput" 
+                            class="answer-input" 
+                            placeholder="Enter decrypted message..." 
+                            onkeypress="handleEnter(event)"
+                        >
+                    </div>
+
+                    <div class="timer-section">
+                        <div class="timer-display">
+                            <i class="fas fa-hourglass-end"></i>
+                            <span id="timerDisplay">00:00</span>
+                        </div>
+                        <p class="timer-label">TIME REMAINING</p>
+                    </div>
+
+                    <button class="btn-submit" onclick="submitAnswer()">
+                        <i class="fas fa-check"></i> SUBMIT
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RESULT PAGE -->
+    <div id="resultPage" class="page">
+        <div class="container result-container">
+            <div class="result-content" id="resultContent">
+                <!-- Result content will be inserted here by JavaScript -->
+            </div>
+            <button class="btn-next" onclick="returnToMain()">
+                <i class="fas fa-arrow-right"></i> BACK TO MAIN
+            </button>
+        </div>
+    </div>
+
+    <!-- CELEBRATION PAGE -->
+    <div id="celebrationPage" class="page">
+        <div class="celebration-container">
+            <video id="celebrationVideo" class="celebration-video" controls autoplay>
+                <source src="Decryption Successful.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <button class="btn-next" onclick="returnToMain()">
+                <i class="fas fa-home"></i> RETURN TO HOME
+            </button>
+        </div>
+    </div>
+
+    <!-- SCRIPTS (CORRECT ORDER) -->
+    <script src="loading.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
