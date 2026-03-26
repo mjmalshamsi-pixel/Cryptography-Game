@@ -51,7 +51,7 @@ const challenges = [
         title: "Substitution Code",
         description: "Decrypt using the Atbash Cipher, where A↔Z, B↔Y, C↔X, etc. The alphabet is completely reversed.",
         type: "substitution",
-        encrypted: "HVOOL DLIOW",
+        encrypted: "svool dliow",
         answer: "HELLO WORLD",
         timeLimit: 80,
         hint: "In Atbash, each letter maps to its opposite: A=Z, B=Y, C=X, D=W, E=V, F=U, G=T, H=S, etc. Apply this mapping to decrypt."
