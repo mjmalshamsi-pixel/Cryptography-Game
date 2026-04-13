@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <!-- MATRIX BACKGROUND -->
     <div class="matrix-bg">
         <img src="Background.gif" alt="Matrix Background" class="matrix-gif">
@@ -29,10 +30,12 @@
     <!-- MAIN PAGE -->
     <div id="mainPage" class="page active">
         <div class="container">
+
             <!-- HEADER -->
             <header class="header">
                 <h1><i class="fas fa-lock"></i> CIPHER MASTER</h1>
                 <p class="subtitle">Decrypt The Codes - Master The Ciphers</p>
+
                 <div class="system-status">
                     <div class="status-box">
                         <span class="status-label">SCORE:</span>
@@ -46,7 +49,17 @@
                         <span class="status-label">LEVEL:</span>
                         <span id="mainLevel" class="status-value">NOVICE</span>
                     </div>
+
+                    <!-- ── NEW: Hint Points status box on Main Page ── -->
+                    <div class="status-box hint-points-box">
+                        <span class="status-label">
+                            <i class="fas fa-lightbulb"></i> HINTS:
+                        </span>
+                        <span id="mainHintPoints" class="status-value hint-points-value">10</span>
+                        <span class="status-label">/ 10</span>
+                    </div>
                 </div>
+
                 <div class="progress-container">
                     <div class="progress-bar">
                         <div id="progressFill" class="progress-fill"></div>
@@ -57,6 +70,7 @@
 
             <!-- CHALLENGES GRID -->
             <div class="challenges-grid">
+
                 <!-- Challenge 1: Base64 -->
                 <div class="challenge-card unlocked" onclick="startChallengeIfUnlocked(0)">
                     <div class="challenge-header">
@@ -64,6 +78,9 @@
                         <span class="challenge-type">BASE64</span>
                     </div>
                     <p class="challenge-description">Decode a Base64 encrypted message</p>
+                    <div class="hint-cost-badge">
+                        <i class="fas fa-lightbulb"></i> Hint: 1 pt
+                    </div>
                     <div id="status0" class="challenge-status unlocked">
                         <i class="fas fa-play"></i> PLAY
                     </div>
@@ -76,6 +93,9 @@
                         <span class="challenge-type">CAESAR</span>
                     </div>
                     <p class="challenge-description">Shift cipher with key 3</p>
+                    <div class="hint-cost-badge">
+                        <i class="fas fa-lightbulb"></i> Hint: 1 pt
+                    </div>
                     <div id="status1" class="challenge-status locked">
                         <i class="fas fa-lock"></i> LOCKED
                     </div>
@@ -88,6 +108,9 @@
                         <span class="challenge-type">CAESAR</span>
                     </div>
                     <p class="challenge-description">Shift cipher with key 5</p>
+                    <div class="hint-cost-badge">
+                        <i class="fas fa-lightbulb"></i> Hint: 1 pt
+                    </div>
                     <div id="status2" class="challenge-status locked">
                         <i class="fas fa-lock"></i> LOCKED
                     </div>
@@ -100,6 +123,9 @@
                         <span class="challenge-type">SUBSTITUTION</span>
                     </div>
                     <p class="challenge-description">Reverse alphabet cipher</p>
+                    <div class="hint-cost-badge">
+                        <i class="fas fa-lightbulb"></i> Hint: 1 pt
+                    </div>
                     <div id="status3" class="challenge-status locked">
                         <i class="fas fa-lock"></i> LOCKED
                     </div>
@@ -112,6 +138,9 @@
                         <span class="challenge-type">VIGENÈRE</span>
                     </div>
                     <p class="challenge-description">Keyword-based cipher</p>
+                    <div class="hint-cost-badge">
+                        <i class="fas fa-lightbulb"></i> Hint: 1 pt
+                    </div>
                     <div id="status4" class="challenge-status locked">
                         <i class="fas fa-lock"></i> LOCKED
                     </div>
@@ -124,6 +153,9 @@
                         <span class="challenge-type">BASE64</span>
                     </div>
                     <p class="challenge-description">Advanced Base64 encoding</p>
+                    <div class="hint-cost-badge">
+                        <i class="fas fa-lightbulb"></i> Hint: 1 pt
+                    </div>
                     <div id="status5" class="challenge-status locked">
                         <i class="fas fa-lock"></i> LOCKED
                     </div>
@@ -136,6 +168,9 @@
                         <span class="challenge-type">CAESAR</span>
                     </div>
                     <p class="challenge-description">Identify the shift value</p>
+                    <div class="hint-cost-badge">
+                        <i class="fas fa-lightbulb"></i> Hint: 1 pt
+                    </div>
                     <div id="status6" class="challenge-status locked">
                         <i class="fas fa-lock"></i> LOCKED
                     </div>
@@ -148,6 +183,9 @@
                         <span class="challenge-type">VIGENÈRE</span>
                     </div>
                     <p class="challenge-description">Medium difficulty cipher</p>
+                    <div class="hint-cost-badge">
+                        <i class="fas fa-lightbulb"></i> Hint: 1 pt
+                    </div>
                     <div id="status7" class="challenge-status locked">
                         <i class="fas fa-lock"></i> LOCKED
                     </div>
@@ -160,32 +198,57 @@
                         <span class="challenge-type">SUBSTITUTION</span>
                     </div>
                     <p class="challenge-description">Complex substitution cipher</p>
+                    <div class="hint-cost-badge">
+                        <i class="fas fa-lightbulb"></i> Hint: 1 pt
+                    </div>
                     <div id="status8" class="challenge-status locked">
                         <i class="fas fa-lock"></i> LOCKED
                     </div>
                 </div>
 
-                <!-- Challenge 10: Master Challenge -->
-                <div class="challenge-card locked" onclick="startChallengeIfUnlocked(9)">
+                <!-- Challenge 10: Master Challenge — 5 pt hint cost -->
+                <div class="challenge-card locked master-card" onclick="startChallengeIfUnlocked(9)">
                     <div class="challenge-header">
                         <h3>Challenge 10</h3>
-                        <span class="challenge-type">MASTER</span>
+                        <span class="challenge-type master-type">MASTER</span>
                     </div>
                     <p class="challenge-description">Ultimate cryptography test</p>
+                    <!-- ── NEW: 5-point badge for Master Challenge ── -->
+                    <div class="hint-cost-badge hint-cost-high">
+                        <i class="fas fa-lightbulb"></i> Hint: 5 pts
+                    </div>
                     <div id="status9" class="challenge-status locked">
                         <i class="fas fa-lock"></i> LOCKED
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
+
+            </div><!-- /challenges-grid -->
+        </div><!-- /container -->
+    </div><!-- /mainPage -->
 
     <!-- CHALLENGE PAGE -->
     <div id="challengePage" class="page">
         <div class="container challenge-container">
+
             <button class="btn-back" onclick="returnToMain()">
                 <i class="fas fa-arrow-left"></i> BACK
             </button>
+
+            <!-- ── NEW: Hint Points HUD Panel ── -->
+            <div class="hint-hud">
+                <div class="hint-hud-label">
+                    <i class="fas fa-lightbulb"></i> HINT POINTS
+                </div>
+                <div class="hint-hud-bar-wrap">
+                    <div class="hint-hud-bar">
+                        <div id="hintPointsBar" class="hint-hud-bar-fill"></div>
+                    </div>
+                </div>
+                <div class="hint-hud-count">
+                    <span id="challengeHintPoints">10</span>
+                    <span class="hint-hud-max">/ 10</span>
+                </div>
+            </div>
 
             <div class="challenge-content">
                 <header class="challenge-header-section">
@@ -194,25 +257,28 @@
                 </header>
 
                 <div class="challenge-display">
+
                     <div class="encrypted-section">
                         <label>ENCRYPTED MESSAGE:</label>
                         <div id="encryptedMessage" class="encrypted-text">ENCRYPTED_TEXT</div>
                     </div>
 
                     <div class="hint-section">
+                        <!-- ── UPDATED: hint button now shows cost badge ── -->
                         <button id="hintBtn" class="btn-hint" onclick="showHint()">
                             <i class="fas fa-lightbulb"></i> SHOW HINT
+                            <span id="hintCost" class="hint-cost-tag">-1 PT</span>
                         </button>
                         <p id="hintText" class="hint-text" style="display:none;"></p>
                     </div>
 
                     <div class="answer-section">
                         <label>YOUR ANSWER:</label>
-                        <input 
-                            type="text" 
-                            id="answerInput" 
-                            class="answer-input" 
-                            placeholder="Enter decrypted message..." 
+                        <input
+                            type="text"
+                            id="answerInput"
+                            class="answer-input"
+                            placeholder="Enter decrypted message..."
                             onkeypress="handleEnter(event)"
                         >
                     </div>
@@ -228,16 +294,17 @@
                     <button class="btn-submit" onclick="submitAnswer()">
                         <i class="fas fa-check"></i> SUBMIT
                     </button>
+
                 </div>
             </div>
         </div>
-    </div>
+    </div><!-- /challengePage -->
 
     <!-- RESULT PAGE -->
     <div id="resultPage" class="page">
         <div class="container result-container">
             <div class="result-content" id="resultContent">
-                <!-- Result content will be inserted here by JavaScript -->
+                <!-- Result content injected by JS -->
             </div>
             <button class="btn-next" onclick="returnToMain()">
                 <i class="fas fa-arrow-right"></i> BACK TO MAIN
@@ -258,7 +325,7 @@
         </div>
     </div>
 
-    <!-- SCRIPTS (CORRECT ORDER) -->
+    <!-- SCRIPTS -->
     <script src="loading.js"></script>
     <script src="game.js"></script>
 </body>
