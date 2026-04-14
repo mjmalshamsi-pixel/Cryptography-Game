@@ -477,32 +477,103 @@ body {
 
 /* CELEBRATION PAGE */
 .celebration-container {
-    position: relative; z-index: 1;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    min-height: 100vh; padding: 20px; gap: 30px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+    gap: 30px;
 }
+
 .celebration-video {
-    width: 100%; max-width: 900px; height: auto;
-    border: 3px solid var(--neon-cyan); border-radius: 10px;
-    box-shadow: 0 0 40px rgba(0,240,255,0.6);
-    background: #000; animation: videoPulse 2s infinite;
+    width: 100%;
+    max-width: 860px;
+    height: auto;
+    border: 3px solid var(--neon-cyan);
+    border-radius: 10px;
+    box-shadow: 0 0 40px rgba(0, 240, 255, 0.6);
+    background: #000;
+    display: block;
+    animation: videoPulse 2s infinite;
 }
+
 @keyframes videoPulse {
-    0%, 100% { box-shadow: 0 0 40px rgba(0,240,255,0.6); }
-    50%       { box-shadow: 0 0 60px rgba(0,240,255,0.8); }
+    0%, 100% { box-shadow: 0 0 40px rgba(0, 240, 255, 0.6); }
+    50%       { box-shadow: 0 0 70px rgba(0, 240, 255, 0.9); }
 }
+
+/* CERTIFICATE PROMPT — always visible, no waiting */
+.cert-prompt-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: 28px 44px;
+    background: rgba(0, 240, 255, 0.04);
+    border: 2px solid var(--neon-cyan);
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.2);
+    width: 100%;
+    max-width: 600px;
+    animation: fadeIn 1s ease-in;
+}
+
+.cert-prompt-text {
+    color: var(--neon-green);
+    font-size: 1.05em;
+    letter-spacing: 2px;
+    text-align: center;
+    text-shadow: 0 0 10px var(--neon-green);
+    font-family: var(--font-mono);
+}
+
+.cert-prompt-text i {
+    color: #ffaa00;
+    text-shadow: 0 0 12px #ffaa00;
+    margin-right: 8px;
+}
+
+/* GET MY CERTIFICATE button */
 .btn-get-certificate {
-    border-color: var(--neon-purple) !important;
-    color: var(--neon-purple) !important;
-    text-shadow: 0 0 8px var(--neon-purple) !important;
-    font-size: 1.1em !important;
-    padding: 15px 40px !important;
+    padding: 15px 44px;
+    background: linear-gradient(135deg,
+        rgba(181, 55, 242, 0.2),
+        rgba(0, 240, 255, 0.1)
+    );
+    border: 2px solid var(--neon-purple);
+    color: var(--neon-purple);
+    font-family: var(--font-mono);
+    font-size: 1.1em;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 8px var(--neon-purple);
     animation: certBtnPulse 2s infinite;
 }
+
+.btn-get-certificate:hover {
+    background: linear-gradient(135deg,
+        rgba(181, 55, 242, 0.4),
+        rgba(0, 240, 255, 0.2)
+    );
+    box-shadow: 0 0 40px rgba(181, 55, 242, 0.7);
+    transform: scale(1.05);
+}
+
 @keyframes certBtnPulse {
-    0%, 100% { box-shadow: 0 0 15px rgba(181,55,242,0.4); }
-    50%       { box-shadow: 0 0 35px rgba(181,55,242,0.8); }
+    0%, 100% { box-shadow: 0 0 15px rgba(181, 55, 242, 0.4); }
+    50%       { box-shadow: 0 0 35px rgba(181, 55, 242, 0.8); }
+}
+
+@media (max-width: 768px) {
+    .celebration-video  { max-width: 100%; }
+    .cert-prompt-box    { padding: 18px 20px; max-width: 100%; }
+    .cert-prompt-text   { font-size: 0.85em; letter-spacing: 1px; }
+    .btn-get-certificate { font-size: 0.95em; padding: 12px 28px; }
 }
 
 /* ══════════════════════════════════════════════
