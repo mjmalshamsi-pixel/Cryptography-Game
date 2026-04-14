@@ -524,7 +524,7 @@ function showCelebration() {
     setTimeout(() => { gif.src = src; }, 50);
 
     // ── Freeze GIF after one play — set to your GIF's duration ──
-    const GIF_DURATION_MS = 5000; // ← Change this to match your GIF length
+    const GIF_DURATION_MS = 8000; // ← Change this to match your GIF length
 
     gameState.gifFreezeTimer = setTimeout(() => {
         try {
