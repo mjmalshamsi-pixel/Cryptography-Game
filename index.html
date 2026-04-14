@@ -47,7 +47,9 @@
                         <span id="mainLevel" class="status-value">NOVICE</span>
                     </div>
                     <div class="status-box hint-points-box">
-                        <span class="status-label"><i class="fas fa-lightbulb"></i> HINTS:</span>
+                        <span class="status-label">
+                            <i class="fas fa-lightbulb"></i> HINTS:
+                        </span>
                         <span id="mainHintPoints" class="status-value hint-points-value">10</span>
                         <span class="status-label">/ 10</span>
                     </div>
@@ -60,6 +62,7 @@
                 </div>
             </header>
 
+            <!-- CHALLENGES GRID -->
             <div class="challenges-grid">
 
                 <div class="challenge-card unlocked" onclick="startChallengeIfUnlocked(0)">
@@ -68,8 +71,12 @@
                         <span class="challenge-type">BASE64</span>
                     </div>
                     <p class="challenge-description">Decode a Base64 encrypted message</p>
-                    <div class="hint-cost-badge"><i class="fas fa-lightbulb"></i> Hint: 1 pt</div>
-                    <div id="status0" class="challenge-status unlocked"><i class="fas fa-play"></i> PLAY</div>
+                    <div class="hint-cost-badge">
+                        <i class="fas fa-lightbulb"></i> Hint: 1 pt
+                    </div>
+                    <div id="status0" class="challenge-status unlocked">
+                        <i class="fas fa-play"></i> PLAY
+                    </div>
                 </div>
 
                 <div class="challenge-card locked" onclick="startChallengeIfUnlocked(1)">
@@ -78,8 +85,12 @@
                         <span class="challenge-type">CAESAR</span>
                     </div>
                     <p class="challenge-description">Shift cipher with key 3</p>
-                    <div class="hint-cost-badge"><i class="fas fa-lightbulb"></i> Hint: 1 pt</div>
-                    <div id="status1" class="challenge-status locked"><i class="fas fa-lock"></i> LOCKED</div>
+                    <div class="hint-cost-badge">
+                        <i class="fas fa-lightbulb"></i> Hint: 1 pt
+                    </div>
+                    <div id="status1" class="challenge-status locked">
+                        <i class="fas fa-lock"></i> LOCKED
+                    </div>
                 </div>
 
                 <div class="challenge-card locked" onclick="startChallengeIfUnlocked(2)">
@@ -88,8 +99,12 @@
                         <span class="challenge-type">CAESAR</span>
                     </div>
                     <p class="challenge-description">Shift cipher with key 5</p>
-                    <div class="hint-cost-badge"><i class="fas fa-lightbulb"></i> Hint: 1 pt</div>
-                    <div id="status2" class="challenge-status locked"><i class="fas fa-lock"></i> LOCKED</div>
+                    <div class="hint-cost-badge">
+                        <i class="fas fa-lightbulb"></i> Hint: 1 pt
+                    </div>
+                    <div id="status2" class="challenge-status locked">
+                        <i class="fas fa-lock"></i> LOCKED
+                    </div>
                 </div>
 
                 <div class="challenge-card locked" onclick="startChallengeIfUnlocked(3)">
@@ -98,8 +113,12 @@
                         <span class="challenge-type">SUBSTITUTION</span>
                     </div>
                     <p class="challenge-description">Reverse alphabet cipher</p>
-                    <div class="hint-cost-badge"><i class="fas fa-lightbulb"></i> Hint: 1 pt</div>
-                    <div id="status3" class="challenge-status locked"><i class="fas fa-lock"></i> LOCKED</div>
+                    <div class="hint-cost-badge">
+                        <i class="fas fa-lightbulb"></i> Hint: 1 pt
+                    </div>
+                    <div id="status3" class="challenge-status locked">
+                        <i class="fas fa-lock"></i> LOCKED
+                    </div>
                 </div>
 
                 <div class="challenge-card locked" onclick="startChallengeIfUnlocked(4)">
@@ -108,8 +127,12 @@
                         <span class="challenge-type">VIGENÈRE</span>
                     </div>
                     <p class="challenge-description">Keyword-based cipher</p>
-                    <div class="hint-cost-badge"><i class="fas fa-lightbulb"></i> Hint: 1 pt</div>
-                    <div id="status4" class="challenge-status locked"><i class="fas fa-lock"></i> LOCKED</div>
+                    <div class="hint-cost-badge">
+                        <i class="fas fa-lightbulb"></i> Hint: 1 pt
+                    </div>
+                    <div id="status4" class="challenge-status locked">
+                        <i class="fas fa-lock"></i> LOCKED
+                    </div>
                 </div>
 
                 <div class="challenge-card locked" onclick="startChallengeIfUnlocked(5)">
@@ -118,8 +141,12 @@
                         <span class="challenge-type">BASE64</span>
                     </div>
                     <p class="challenge-description">Advanced Base64 encoding</p>
-                    <div class="hint-cost-badge"><i class="fas fa-lightbulb"></i> Hint: 1 pt</div>
-                    <div id="status5" class="challenge-status locked"><i class="fas fa-lock"></i> LOCKED</div>
+                    <div class="hint-cost-badge">
+                        <i class="fas fa-lightbulb"></i> Hint: 1 pt
+                    </div>
+                    <div id="status5" class="challenge-status locked">
+                        <i class="fas fa-lock"></i> LOCKED
+                    </div>
                 </div>
 
                 <div class="challenge-card locked" onclick="startChallengeIfUnlocked(6)">
@@ -128,8 +155,12 @@
                         <span class="challenge-type">CAESAR</span>
                     </div>
                     <p class="challenge-description">Identify the shift value</p>
-                    <div class="hint-cost-badge"><i class="fas fa-lightbulb"></i> Hint: 1 pt</div>
-                    <div id="status6" class="challenge-status locked"><i class="fas fa-lock"></i> LOCKED</div>
+                    <div class="hint-cost-badge">
+                        <i class="fas fa-lightbulb"></i> Hint: 1 pt
+                    </div>
+                    <div id="status6" class="challenge-status locked">
+                        <i class="fas fa-lock"></i> LOCKED
+                    </div>
                 </div>
 
                 <div class="challenge-card locked" onclick="startChallengeIfUnlocked(7)">
@@ -138,8 +169,12 @@
                         <span class="challenge-type">VIGENÈRE</span>
                     </div>
                     <p class="challenge-description">Medium difficulty cipher</p>
-                    <div class="hint-cost-badge"><i class="fas fa-lightbulb"></i> Hint: 1 pt</div>
-                    <div id="status7" class="challenge-status locked"><i class="fas fa-lock"></i> LOCKED</div>
+                    <div class="hint-cost-badge">
+                        <i class="fas fa-lightbulb"></i> Hint: 1 pt
+                    </div>
+                    <div id="status7" class="challenge-status locked">
+                        <i class="fas fa-lock"></i> LOCKED
+                    </div>
                 </div>
 
                 <div class="challenge-card locked" onclick="startChallengeIfUnlocked(8)">
@@ -148,8 +183,12 @@
                         <span class="challenge-type">SUBSTITUTION</span>
                     </div>
                     <p class="challenge-description">Complex substitution cipher</p>
-                    <div class="hint-cost-badge"><i class="fas fa-lightbulb"></i> Hint: 1 pt</div>
-                    <div id="status8" class="challenge-status locked"><i class="fas fa-lock"></i> LOCKED</div>
+                    <div class="hint-cost-badge">
+                        <i class="fas fa-lightbulb"></i> Hint: 1 pt
+                    </div>
+                    <div id="status8" class="challenge-status locked">
+                        <i class="fas fa-lock"></i> LOCKED
+                    </div>
                 </div>
 
                 <div class="challenge-card locked master-card" onclick="startChallengeIfUnlocked(9)">
@@ -158,8 +197,12 @@
                         <span class="challenge-type master-type">MASTER</span>
                     </div>
                     <p class="challenge-description">Ultimate cryptography test</p>
-                    <div class="hint-cost-badge hint-cost-high"><i class="fas fa-lightbulb"></i> Hint: 5 pts</div>
-                    <div id="status9" class="challenge-status locked"><i class="fas fa-lock"></i> LOCKED</div>
+                    <div class="hint-cost-badge hint-cost-high">
+                        <i class="fas fa-lightbulb"></i> Hint: 5 pts
+                    </div>
+                    <div id="status9" class="challenge-status locked">
+                        <i class="fas fa-lock"></i> LOCKED
+                    </div>
                 </div>
 
             </div>
@@ -169,12 +212,15 @@
     <!-- CHALLENGE PAGE -->
     <div id="challengePage" class="page">
         <div class="container challenge-container">
+
             <button class="btn-back" onclick="returnToMain()">
                 <i class="fas fa-arrow-left"></i> BACK
             </button>
 
             <div class="hint-hud">
-                <div class="hint-hud-label"><i class="fas fa-lightbulb"></i> HINT POINTS</div>
+                <div class="hint-hud-label">
+                    <i class="fas fa-lightbulb"></i> HINT POINTS
+                </div>
                 <div class="hint-hud-bar-wrap">
                     <div class="hint-hud-bar">
                         <div id="hintPointsBar" class="hint-hud-bar-fill"></div>
@@ -232,95 +278,96 @@
     <div id="resultPage" class="page">
         <div class="container result-container">
             <div class="result-content" id="resultContent"></div>
+            <div id="resultActions" class="result-actions"></div>
+        </div>
+    </div>
+
+    <!-- CELEBRATION PAGE -->
+    <div id="celebrationPage" class="page">
+        <div class="celebration-container">
+
+            <img
+                id="celebrationGif"
+                src="DecryptionSuccessful.gif"
+                alt="Decryption Successful"
+                class="celebration-gif"
+            >
+
             <button class="btn-next" onclick="returnToMain()">
-                <i class="fas fa-arrow-right"></i> BACK TO MAIN
+                <i class="fas fa-home"></i> RETURN TO HOME
             </button>
+
         </div>
     </div>
 
-   <!-- CELEBRATION PAGE -->
-<div id="celebrationPage" class="page">
-    <div class="celebration-container">
+    <!-- NAME PAGE -->
+    <div id="namePage" class="page">
+        <div class="container name-page-container">
+            <div class="name-page-box">
 
-        <video
-            id="celebrationVideo"
-            class="celebration-video"
-            muted
-            playsinline
-            preload="auto"
-        >
-            <source src="Decryption Successful.mp4" type="video/mp4">
-        </video>
+                <div class="name-page-topbar"></div>
 
-        <!-- Always visible immediately — no waiting for video -->
-        <div class="cert-prompt-box">
-            <p class="cert-prompt-text">
-                <i class="fas fa-trophy"></i>
-                YOU HAVE MASTERED ALL 10 CIPHER CHALLENGES!
-            </p>
-            <button class="btn-get-certificate" onclick="showNameModal()">
-                <i class="fas fa-certificate"></i> GET MY CERTIFICATE
-            </button>
-        </div>
+                <div class="name-page-inner">
+                    <div class="name-page-icon">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
 
-    </div>
-</div>
+                    <h2 class="name-page-title">IDENTITY CONFIRMATION</h2>
+                    <p class="name-page-subtitle">
+                        All 10 ciphers cracked. Enter your name to generate<br>
+                        your official <span class="highlight-cyan">Cipher Master Certificate</span>
+                    </p>
 
-    <!-- ══════════════════════════════════════ -->
-    <!-- NAME INPUT MODAL  ← NEW              -->
-    <!-- ══════════════════════════════════════ -->
-    <div id="nameModal" class="name-modal-overlay">
-        <div class="name-modal-box">
+                    <div class="name-page-stats">
+                        <div class="name-stat-box">
+                            <span class="name-stat-label">FINAL SCORE</span>
+                            <span id="namePageScore" class="name-stat-value score-color">0</span>
+                        </div>
+                        <div class="name-stat-box">
+                            <span class="name-stat-label">RANK</span>
+                            <span id="namePageRank" class="name-stat-value rank-color">—</span>
+                        </div>
+                        <div class="name-stat-box">
+                            <span class="name-stat-label">HINTS LEFT</span>
+                            <span id="namePageHints" class="name-stat-value hint-color">—</span>
+                        </div>
+                    </div>
 
-            <!-- Decorative top bar -->
-            <div class="name-modal-topbar"></div>
+                    <div class="name-input-wrap">
+                        <i class="fas fa-terminal name-input-icon"></i>
+                        <input
+                            type="text"
+                            id="playerNameInput"
+                            class="name-input-field"
+                            placeholder="ENTER YOUR NAME..."
+                            maxlength="40"
+                            onkeypress="handleNameEnter(event)"
+                            autocomplete="off"
+                            spellcheck="false"
+                        >
+                    </div>
 
-            <div class="name-modal-icon">
-                <i class="fas fa-user-secret"></i>
+                    <p id="nameError" class="name-error-text" style="display:none;"></p>
+
+                    <button class="btn-generate-cert" onclick="confirmPlayerName()">
+                        <i class="fas fa-certificate"></i>
+                        GENERATE MY CERTIFICATE
+                    </button>
+
+                    <p class="name-footer-note">
+                        <i class="fas fa-info-circle"></i>
+                        Name appears on certificate exactly as typed
+                    </p>
+                </div>
             </div>
-
-            <h2 class="name-modal-title">IDENTITY CONFIRMED</h2>
-            <p class="name-modal-subtitle">
-                Enter your name to generate your<br>
-                official <span class="highlight-cyan">Cipher Master Certificate</span>
-            </p>
-
-            <div class="name-modal-input-wrap">
-                <i class="fas fa-terminal name-modal-input-icon"></i>
-                <input
-                    type="text"
-                    id="playerNameInput"
-                    class="name-modal-input"
-                    placeholder="YOUR NAME HERE..."
-                    maxlength="40"
-                    onkeypress="handleNameEnter(event)"
-                    autocomplete="off"
-                    spellcheck="false"
-                >
-            </div>
-
-            <p id="nameError" class="name-modal-error" style="display:none;"></p>
-
-            <div class="name-modal-actions">
-                <button class="btn-generate-cert" onclick="confirmPlayerName()">
-                    <i class="fas fa-certificate"></i> GENERATE CERTIFICATE
-                </button>
-            </div>
-
-            <p class="name-modal-hint-text">
-                <i class="fas fa-info-circle"></i>
-                Your name will appear on the certificate exactly as typed.
-            </p>
         </div>
     </div>
 
-    <!-- ══════════════════════════════════════ -->
-    <!-- CERTIFICATE PAGE  ← NEW              -->
-    <!-- ══════════════════════════════════════ -->
+    <!-- CERTIFICATE PAGE -->
     <div id="certificatePage" class="page">
         <div class="container certificate-container">
 
-            <div class="cert-header">
+            <div class="cert-page-header">
                 <h2 class="cert-page-title">
                     <i class="fas fa-trophy"></i> YOUR CERTIFICATE
                 </h2>
@@ -329,12 +376,10 @@
                 </p>
             </div>
 
-            <!-- The canvas where the certificate is drawn -->
             <div class="canvas-wrapper">
                 <canvas id="certificateCanvas" class="certificate-canvas"></canvas>
             </div>
 
-            <!-- Action buttons -->
             <div class="cert-actions">
                 <button class="btn-download-cert" onclick="downloadCertificate()">
                     <i class="fas fa-download"></i> DOWNLOAD CERTIFICATE
