@@ -480,19 +480,23 @@ function showResult(isCorrect, message, showAnswer) {
 // ============================================
 
 function showCelebration() {
-    const video = document.getElementById('celebrationVideo');
-    if (video) {
-        video.currentTime = 0;
-        video.play();
-    }
     showPage('celebrationPage');
 
-    // ── After video ends, show the name modal automatically ──
-    if (video) {
-        video.addEventListener('ended', () => {
-            showNameModal();
-        }, { once: true });
-    }
+    const video = document.getElementById('celebrationVideo');
+    if (!video) return;
+
+    // Reset to beginning
+    video.currentTime = 0;
+
+    // muted + playsinline = autoplay works in ALL browsers
+    video.muted      = true;
+    video.playsInline = true;
+
+    // Attempt play — safe with muted, no permission needed
+    video.play().catch(err => {
+        console.log('Video play failed:', err);
+        // Button is already visible so user is never stuck
+    });
 }
 
 // ============================================
